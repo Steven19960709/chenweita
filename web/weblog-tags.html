@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    .intro-header {
+        width: 100%;
+        height: 500px;
+        border: 1px solid black;
+        font-size: 30px;
+        background-image: url();
+        display: flex;
+        flex-flow: column;
+    }
+
+    .header-container {
+        display: flex;
+        flex-flow: row;
+    }
+
+    /* 左上角 */
+    .navbar-brand {
+        width: 300px;
+        height: 50px;
+        flex-grow: 2;
+    }
+
+    .navbar-brand a {
+        text-decoration: none;
+        color: rgb(116, 197, 11);
+        ;
+    }
+
+    /* 右上角 */
+    .navbar-toggle {
+        width: 300px;
+        height: 50px;
+        /* justify-self: flex-end; */
+        flex-grow: 0;
+    }
+
+    .navbar-toggle ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .navbar-toggle ul li a {
+        text-decoration: none;
+        color: rgb(116, 197, 11);
+        ;
+        font-size: 20px;
+    }
+
+    /* //中间 */
+
+    .site-content {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+    }
+
+    .site-content a {
+        text-decoration: none;
+        color: rgb(116, 197, 11);
+        ;
+    }
+
+    .site-content .site-heading {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-content .subheading {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* 标签区 */
+    .container{
+        display: flex;
+        justify-content: center;
+        margin:25px;
+    }
+   .container .post-tags{
+       width:780px;
+       height:108px;
+   }
+   .container .post-tags ul {
+       display: flex;
+       flex-flow:row wrap;
+       padding:4px;
+   }
+   .container .post-tags ul li{
+       list-style: none;
+       background:rgb(116, 167, 209);
+       border-radius:10px;
+       font-size: 14px;
+    line-height: 28px;
+    margin: 0 10px;
+    margin-bottom: 8px;
+    padding: 0 10px;
+   }
+   
+   .container .post-tags ul li span a{
+       text-decoration:none;
+       color: #fff;
+       display: block;
+   }
+    /* tags-lists区 */
+   .tags-lists{
+       width:100%;
+       display: flex;
+       flex-flow: column;
+       justify-content: center;
+       align-items: center;
+       font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
+   }
+   .tags-lists .tag-name{
+    color: #0085a1;
+    font-weight: 200;
+    line-height: 1.7;
+    font-size:20px !important;
+    margin-left: -650px;
+   }
+   .tags-lists .one-tag-lists{
+       width:780px;
+       height:1000px;
+   }
+   .tags-lists .one-tag-lists ul li{
+        list-style:none;
+        font-size: 18px;
+    line-height: 1.3;
+    font-weight: 500;
+    margin-top: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    margin-left: 20px;
+   }
+   .tags-lists .one-tag-lists ul hr{
+       border: 0.5px solid #ccc;
+   }
+    /* 个人信息 */
+    .information {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #777;
+        margin-top: 250px;
+    }
+
+    .information .information-huahua {
+        width: 250px;
+        height: 150px;
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+    }
+
+    .information .information-huahua img {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        display: block;
+    }
+
+    .information .themeby a {
+        text-decoration: none;
+        color: #337ab7;
+    }
+</style>
+
+<body>
+    <div>
+        <div class="intro-header">
+            <div class="header-container">
+                <div class="navbar-brand"><a href="">花花的世界</a></div>
+                <div class="navbar-toggle">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Tags</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-content">
+                <div class="site-heading">
+                    <a href="">
+                        <h1>花花的世界</h1>
+                    </a>
+                </div>
+                <div class="subheading">
+                    <a href="">
+                        <h6>努力努力再努力</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="post-tags">
+                <ul>
+                    <li><span><a>HTML</a></span></li>
+                    <li><span><a>CSS</a></span></li>
+                    <li><span><a>JavaScript</a></span></li>
+                    <li><span><a>VUE</a></span></li>
+                    <li><span><a>JQuery</a></span></li>
+                    <li><span><a>Webpack</a></span></li>
+                    <li><span><a>React</a></span></li>
+                    <li><span><a>Interview</a></span></li>
+                    <li><span><a>ADT</a></span></li>
+                    <li><span><a>Nodejs</a></span></li>
+                    <li><span><a>HTML</a></span></li>
+                    <li><span><a>CSS</a></span></li>
+                    <li><span><a>JavaScript</a></span></li>
+                    <li><span><a>VUE</a></span></li>
+                    <li><span><a>JQuery</a></span></li>
+                    <li><span><a>Webpack</a></span></li>
+                    <li><span><a>React</a></span></li>
+                    <li><span><a>Interview</a></span></li>
+                    <li><span><a>ADT</a></span></li>
+                    <li><span><a>Nodejs</a></span></li>
+                </ul>
+            </div>
+            <div class="post-title"></div>
+        </div>
+        <div class="tags-lists">
+            <div class="tag-name">JavaScript</div>
+            <div class="one-tag-lists">
+                <ul>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                    <li>JS读书笔记</li><hr>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="information">
+        <div class="information-huahua">
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="copyright">
+                <p>
+                    Copyright © 花花的世界 2020
+                </p>
+            </div>
+            <div class="themeby">
+                Theme by
+                <a href="">Huahua</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./article.js"></script>
+    <script>
+        // let a
+        console.log(article)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    .intro-header {
+        width: 100%;
+        height: 500px;
+        border: 1px solid black;
+        font-size: 30px;
+        background-image: url();
+        display: flex;
+        flex-flow: column;
+    }
+
+    .header-container {
+        display: flex;
+        flex-flow: row;
+    }
+
+    /* 左上角 */
+    .navbar-brand {
+        width: 300px;
+        height: 50px;
+        flex-grow: 2;
+    }
+
+    .navbar-brand a {
+        text-decoration: none;
+        color: rgb(116, 197, 11);
+        ;
+    }
+
+    /* 右上角 */
+    .navbar-toggle {
+        width: 300px;
+        height: 50px;
+        /* justify-self: flex-end; */
+        flex-grow: 0;
+    }
+
+    .navbar-toggle ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .navbar-toggle ul li a {
+        text-decoration: none;
+        color: rgb(116, 197, 11);
+        ;
+        font-size: 20px;
+    }
+
+    /* //中间 */
+
+    .site-content {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+    }
+
+    .site-content a {
+        text-decoration: none;
+        color: rgb(116, 197, 11);
+        ;
+    }
+
+    .site-content .site-heading {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-content .subheading {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* 右上角 */
+    /* 句子区 */
+    .post-content {
+        width: 100%;
+        height: 1300px;
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    /* //左边句子区 */
+    .post-preview {
+        font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #404040;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+    }
+    .post-preview .information-sentence {
+        width: 700px;
+        height: 800px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+    }
+    .post-preview .information-sentence .favorite-sentence ul{
+        width:700px;
+        height:200px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+    }
+    .post-preview .information-sentence .favorite-sentence li{
+        height:50px;
+        border-left:3px solid gray;
+        color: gray;
+    font-style: italic;
+    font-size: 0.95em;
+    list-style:none;
+    text-align: center;
+    }
+    .post-preview .information-sentence .contact-information a{
+        text-decoration:none;
+    color: #404040;
+    }
+   
+    /* 右边标签区 */
+    .post-content .post-tags .post-tags-name {
+        width: 220px;
+        height: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .post-content .post-tags .post-tags-name ul {
+        width: 200px;
+        height: 220px;
+        display: flex;
+        flex-flow: wrap row;
+        list-style: none;
+        padding-top: 20px;
+        border-top: 2px solid #ccc;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .post-content .post-tags .post-tags-name li {
+        /* width:50px; */
+        height: 26px;
+        border: 1px solid #bfbfbf;
+        border-radius: 12px;
+        padding: 2px 3px;
+        color: #bfbfbf;
+        font-size: 12px;
+        line-height: 24px;
+        margin: 0px 8px;
+    }
+
+    /* 右边头像区 */
+    .post-content .post-img {
+        width: 220px;
+        height: 220px;
+        /* border: 1px solid black; */
+        color: #ccc;
+        margin: 0px 10px;
+    }
+
+    .post-content .post-img img {
+        width: 80%;
+        display: block;
+        height: 80%;
+        /* border: 1px solid black; */
+    }
+
+    .post-content .post-img p {
+        color: #bfbfbf;
+        font-size: 14px;
+        line-height: 1.7;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    }
+
+    /* 个人信息 */
+    .information {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #777;
+        margin-top:-280px;
+    }
+
+    .information .information-huahua {
+        width: 250px;
+        height: 150px;
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+    }
+
+    .information .information-huahua img {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        display: block;
+    }
+
+    .information .themeby a {
+        text-decoration: none;
+        color: #337ab7;
+    }
+</style>
+
+<body>
+    <div>
+        <div class="intro-header">
+            <div class="header-container">
+                <div class="navbar-brand"><a href="">花花的世界</a></div>
+                <div class="navbar-toggle">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Tags</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-content">
+                <div class="site-heading">
+                    <a href="">
+                        <h1>花花的世界</h1>
+                    </a>
+                </div>
+                <div class="subheading">
+                    <a href="">
+                        <h6>努力努力再努力</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-content">
+        <div class="post-preview">
+            <div class="information-container">
+                <div class="information-sentence">
+                    <div class="personal-information" >
+                        <p>我是陈泽桦，来自广东汕头，现在在哈尔滨理工大学理学院光电专业就读大二，在2019年8月20日我正式开通了自己的新博客，虽然自身的专业不是关于计算机方面的，但我很热爱编程，希望在博客上能够更加学习，努力进步。
+                        </p>
+                    </div>
+                    <div class="favorite-sentence" >
+                        <h3>喜欢的句子</h3>
+                        <ul>
+                            <li>对于盲目的人来说，所有的风向都是逆风。                                                                         —- 赫伯脱</li>
+                            <li>路漫漫其修远兮，吾将上下而求索。                                                                         —-屈原《离骚》</li>
+                            <li>没有理想，就达不到目的；没有勇敢，就得不到东西。                                                                         –别林斯基</li>
+                        </ul>
+                    </div>
+                    <div class="believe-sentence" >
+                        <h3>坚信</h3>
+                        <ul>
+                            <li>世上无难事，只怕有心人。</li>
+                            <li>心存希望，幸福就会降临你；心存梦想，机遇就会笼罩你。</li>
+                            <li>越努力，越幸运。</li>
+                            <li>人生在勤，不索何获。</li>
+                        </ul>
+                    </div>
+                    <div class="contact-information" >
+                        <h3>联系方式</h3>
+                        <ul>
+                            <li>博客：<a href="">https://chenweita.github.io/</a></li>
+                            <li>微信：1320673491</li>
+                            <li>[微博@陈花花啊啊啊]</li>
+                            <li>QQ:1320673491</li>
+                        </ul>
+                    </div>
+                </div>
+        </div>     
+    </div>
+    <div class="post-tags">
+        <div class="post-tags-name">
+            <ul>
+                <li><span>HTML</span></li>
+                <li><span>CSS</span></li>
+                <li><span>JavaScript</span></li>
+                <li><span>VUE</span></li>
+                <li><span>JQuery</span></li>
+                <li><span>Webpack</span></li>
+                <li><span>React</span></li>
+                <li><span>Interview</span></li>
+                <li><span>ADT</span></li>
+                <li><span>Nodejs</span></li>
+            </ul>
+        </div>
+        <div class="post-img">
+            <h5>About me</h5>
+            <img src="" alt="">
+            <p>just for my dream</p>
+        </div>
+    </div>
+    </div>
+    <div class="information">
+        <div class="information-huahua">
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="copyright">
+                <p>
+                    Copyright © 花花的世界 2020
+                </p>
+            </div>
+            <div class="themeby">
+                Theme by
+                <a href="">Huahua</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./article.js"></script>
+    <script>
+        // let a
+        console.log(article)
+    </script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .intro-header {
+        width: 100%;
+        height: 500px;
+        border: 1px solid black;
+        font-size: 30px;
+        background-image: url();
+        display: flex;
+        flex-flow: column;
+    }
+
+    .header-container {
+        display: flex;
+        flex-flow: row;
+    }
+
+    /* 左上角 */
+    .navbar-brand {
+        width: 300px;
+        height: 50px;
+        flex-grow: 2;
+    }
+
+    .navbar-brand a {
+        text-decoration: none;
+        color: rgb(116, 197, 11);
+        ;
+    }
+
+    /* 右上角 */
+    .navbar-toggle {
+        width: 300px;
+        height: 50px;
+        /* justify-self: flex-end; */
+        flex-grow: 0;
+    }
+
+    .navbar-toggle ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .navbar-toggle ul li a {
+        text-decoration: none;
+        color: rgb(116, 197, 11);
+        ;
+        font-size: 20px;
+    }
+
+    /* //中间 */
+
+    .site-content {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+    }
+
+    .site-content a {
+        text-decoration: none;
+        color: rgb(116, 197, 11);
+        ;
+    }
+
+    .site-content .site-heading {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-content .subheading {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* 右上角 */
+    /* 文章区 */
+    .post-content {
+        width: 100%;
+        height: 1300px;
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    /* //左边文章区 */
+    .post-preview {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+    }
+
+    .post-preview .post-article-preview {
+        width: 700px;
+        height: 150px;
+        display: flex;
+        flex-flow: column;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+    }
+
+
+    .post-preview .post-title a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .post-preview .post-content-preview {
+        width: 700px;
+        height: 60px;
+        font-size: 14px;
+        line-height: 20px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .post-preview .post-content-preview a {
+        text-decoration: none;
+        color: #ccc;
+        font-style: italic;
+    }
+
+
+    .post-preview .post-meta a {
+        text-decoration: none;
+        color: #ccc;
+        font-size: 18px;
+        font-family: Lora, 'Times New Roman', serif;
+        font-style: italic;
+    }
+
+    /* 小箭头 */
+    .post-preview ul {
+        width: 700px;
+        height: 100px;
+        margin-top: 50px;
+    }
+
+    .post-preview ul li {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .post-preview ul li a {
+        padding: 15px 25px;
+        border: 2px solid #ccc;
+        text-decoration: none;
+        color: #404040;
+        font-size: 14px;
+        line-height: 1.7;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 1px;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    }
+
+    /* 右边标签区 */
+    .post-content .post-tags .post-tags-name {
+        width: 220px;
+        height: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .post-content .post-tags .post-tags-name ul {
+        width: 200px;
+        height: 220px;
+        display: flex;
+        flex-flow: wrap row;
+        list-style: none;
+        padding-top: 20px;
+        border-top: 2px solid #ccc;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .post-content .post-tags .post-tags-name li {
+        /* width:50px; */
+        height: 26px;
+        border: 1px solid #bfbfbf;
+        border-radius: 12px;
+        padding: 2px 3px;
+        color: #bfbfbf;
+        font-size: 12px;
+        line-height: 24px;
+        margin: 0px 8px;
+    }
+
+    /* 右边头像区 */
+    .post-content .post-img {
+        width: 220px;
+        height: 220px;
+        /* border: 1px solid black; */
+        color: #ccc;
+        margin: 0px 10px;
+    }
+
+    .post-content .post-img img {
+        width: 80%;
+        display: block;
+        height: 80%;
+        /* border: 1px solid black; */
+    }
+
+    .post-content .post-img p {
+        color: #bfbfbf;
+        font-size: 14px;
+        line-height: 1.7;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    }
+
+    /* 个人信息 */
+    .information{
+        width:100%;
+        height:200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #777;
+    }
+    .information .information-huahua{
+        width: 250px;
+        height: 150px;
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+    }
+    .information .information-huahua img {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        display: block;
+    }
+
+    .information .themeby a {
+        text-decoration: none;
+        color: #337ab7;
+    }
+
+</style>
+
+<body>
+    <div>
+        <div class="intro-header">
+            <div class="header-container">
+                <div class="navbar-brand"><a href="">花花的世界</a></div>
+                <div class="navbar-toggle">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Tags</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-content">
+                <div class="site-heading">
+                    <a href="">
+                        <h1>花花的世界</h1>
+                    </a>
+                </div>
+                <div class="subheading">
+                    <a href="">
+                        <h6>努力努力再努力</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-content">
+        <div class="post-preview">
+            <div class="post-article-preview">
+                <div class="post-title">
+                    <a href="">
+                        <h2>Nodejs7</h2>
+                    </a>
+                </div>
+                <div class="post-content-preview">
+                    <a href="">Node.js Buffer(缓冲区) JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。
+                        但在处理像TCP流或文件流时，必须使用到二进制数据。因此在 Node.js中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。
+                        在 Node.js 中，Buffer 类是随 Node 内核一起发布的核心库。Buffer 库为 Node.js 带来了一种存储原始数据的方法，可以让 Node.js
+                        处理二进制数据，每当需要在 Node.js 中处理I/O操作中移动的数据时，就有可能使用 Buffer 库。原始数据存储在 Buffer 类的实例中。一个 Buffer
+                        类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。</a>
+                </div>
+                <div class="post-meta">
+                    <a href="">Posted by Chen on February 17, 2020</a>
+                </div>
+            </div>
+            <hr>
+            <div class="post-article-preview">
+                <div class="post-title">
+                    <a href="">
+                        <h2>Nodejs7</h2>
+                    </a>
+                </div>
+                <div class="post-content-preview">
+                    <a href="">Node.js Buffer(缓冲区) JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。
+                        但在处理像TCP流或文件流时，必须使用到二进制数据。因此在 Node.js中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。
+                        在 Node.js 中，Buffer 类是随 Node 内核一起发布的核心库。Buffer 库为 Node.js 带来了一种存储原始数据的方法，可以让 Node.js
+                        处理二进制数据，每当需要在 Node.js 中处理I/O操作中移动的数据时，就有可能使用 Buffer 库。原始数据存储在 Buffer 类的实例中。一个 Buffer
+                        类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。</a>
+                </div>
+                <div class="post-meta">
+                    <a href="">Posted by Chen on February 17, 2020</a>
+                </div>
+            </div>
+            <hr>
+            <div class="post-article-preview">
+                <div class="post-title">
+                    <a href="">
+                        <h2>Nodejs7</h2>
+                    </a>
+                </div>
+                <div class="post-content-preview">
+                    <a href="">Node.js Buffer(缓冲区) JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。
+                        但在处理像TCP流或文件流时，必须使用到二进制数据。因此在 Node.js中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。
+                        在 Node.js 中，Buffer 类是随 Node 内核一起发布的核心库。Buffer 库为 Node.js 带来了一种存储原始数据的方法，可以让 Node.js
+                        处理二进制数据，每当需要在 Node.js 中处理I/O操作中移动的数据时，就有可能使用 Buffer 库。原始数据存储在 Buffer 类的实例中。一个 Buffer
+                        类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。</a>
+                </div>
+                <div class="post-meta">
+                    <a href="">Posted by Chen on February 17, 2020</a>
+                </div>
+            </div>
+            <hr>
+            <div class="post-article-preview">
+                <div class="post-title">
+                    <a href="">
+                        <h2>Nodejs7</h2>
+                    </a>
+                </div>
+                <div class="post-content-preview">
+                    <a href="">Node.js Buffer(缓冲区) JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。
+                        但在处理像TCP流或文件流时，必须使用到二进制数据。因此在 Node.js中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。
+                        在 Node.js 中，Buffer 类是随 Node 内核一起发布的核心库。Buffer 库为 Node.js 带来了一种存储原始数据的方法，可以让 Node.js
+                        处理二进制数据，每当需要在 Node.js 中处理I/O操作中移动的数据时，就有可能使用 Buffer 库。原始数据存储在 Buffer 类的实例中。一个 Buffer
+                        类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。</a>
+                </div>
+                <div class="post-meta">
+                    <a href="">Posted by Chen on February 17, 2020</a>
+                </div>
+            </div>
+            <hr>
+            <div class="post-article-preview">
+                <div class="post-title">
+                    <a href="">
+                        <h2>Nodejs7</h2>
+                    </a>
+                </div>
+                <div class="post-content-preview">
+                    <a href="">Node.js Buffer(缓冲区) JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。
+                        但在处理像TCP流或文件流时，必须使用到二进制数据。因此在 Node.js中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。
+                        在 Node.js 中，Buffer 类是随 Node 内核一起发布的核心库。Buffer 库为 Node.js 带来了一种存储原始数据的方法，可以让 Node.js
+                        处理二进制数据，每当需要在 Node.js 中处理I/O操作中移动的数据时，就有可能使用 Buffer 库。原始数据存储在 Buffer 类的实例中。一个 Buffer
+                        类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。</a>
+                </div>
+                <div class="post-meta">
+                    <a href="">Posted by Chen on February 17, 2020</a>
+                </div>
+            </div>
+            <hr>
+            <div class="post-article-preview">
+                <div class="post-title">
+                    <a href="">
+                        <h2>Nodejs7</h2>
+                    </a>
+                </div>
+                <div class="post-content-preview">
+                    <a href="">Node.js Buffer(缓冲区) JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。
+                        但在处理像TCP流或文件流时，必须使用到二进制数据。因此在 Node.js中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。
+                        在 Node.js 中，Buffer 类是随 Node 内核一起发布的核心库。Buffer 库为 Node.js 带来了一种存储原始数据的方法，可以让 Node.js
+                        处理二进制数据，每当需要在 Node.js 中处理I/O操作中移动的数据时，就有可能使用 Buffer 库。原始数据存储在 Buffer 类的实例中。一个 Buffer
+                        类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。</a>
+                </div>
+                <div class="post-meta">
+                    <a href="">Posted by Chen on February 17, 2020</a>
+                </div>
+            </div>
+            <hr>
+            <ul>
+                <li>
+                    <a href="">Older Posts →</a>
+                </li>
+            </ul>
+        </div>
+        <div class="post-tags">
+            <div class="post-tags-name">
+                <ul>
+                    <li><span>HTML</span></li>
+                    <li><span>CSS</span></li>
+                    <li><span>JavaScript</span></li>
+                    <li><span>VUE</span></li>
+                    <li><span>JQuery</span></li>
+                    <li><span>Webpack</span></li>
+                    <li><span>React</span></li>
+                    <li><span>Interview</span></li>
+                    <li><span>ADT</span></li>
+                    <li><span>Nodejs</span></li>
+                </ul>
+            </div>
+            <div class="post-img">
+                <h5>About me</h5>
+                <img src="" alt="">
+                <p>just for my dream</p>
+            </div>
+        </div>
+    </div>
+    <div class="information">
+        <div class="information-huahua">
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="copyright">
+                <p>
+                    Copyright © 花花的世界 2020
+                </p>
+            </div>
+            <div class="themeby">
+                Theme by
+                <a href="">Huahua</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./article.js"></script>
+    <script>
+        // let a
+        console.log(article)
+    </script>
+</body>
+
+</html>
